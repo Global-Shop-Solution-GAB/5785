@@ -1,0 +1,937 @@
+Program.Sub.ScreenSU.Start
+Gui.frmPrint..Create
+Gui.frmPrint..Caption("Printing Tool")
+Gui.frmPrint..Size(10830,9825)
+Gui.frmPrint..MinX(0)
+Gui.frmPrint..MinY(0)
+Gui.frmPrint..Position(0,0)
+Gui.frmPrint..BackColor(-2147483633)
+Gui.frmPrint..MousePointer(0)
+Gui.frmPrint..Event(UnLoad,frmPrint_UnLoad)
+Gui.frmPrint.gsgcSingle.Create(GsGridControl)
+Gui.frmPrint.gsgcSingle.Size(10380,1785)
+Gui.frmPrint.gsgcSingle.Position(60,855)
+Gui.frmPrint.gsgcSingle.Event(RowCellClick,gsgcSingle_RowCellClick)
+Gui.frmPrint.txtSONumb.Create(TextBox,"",True,2010,300,0,90,270,True,0,"Arial",8,-2147483643,1)
+Gui.frmPrint.cmdBrowse.Create(Button)
+Gui.frmPrint.cmdBrowse.Size(615,375)
+Gui.frmPrint.cmdBrowse.Position(2160,225)
+Gui.frmPrint.cmdBrowse.Caption("^")
+Gui.frmPrint.cmdBrowse.Event(Click,cmdBrowse_Click)
+Gui.frmPrint.fraOpt.Create(Frame)
+Gui.frmPrint.fraOpt.Size(3435,600)
+Gui.frmPrint.fraOpt.Position(2835,15)
+Gui.frmPrint.fraOpt.Caption("Logon Jobs")
+Gui.frmPrint.fraOpt.FontStyle(True,False,False,False,False)
+Gui.frmPrint.optDes.Create(Option)
+Gui.frmPrint.optDes.Size(1035,255)
+Gui.frmPrint.optDes.Position(105,240)
+Gui.frmPrint.optDes.Parent("fraOpt")
+Gui.frmPrint.optDes.Caption("Design")
+Gui.frmPrint.optChk.Create(Option)
+Gui.frmPrint.optChk.Size(1155,255)
+Gui.frmPrint.optChk.Position(1245,255)
+Gui.frmPrint.optChk.Parent("fraOpt")
+Gui.frmPrint.optChk.Caption("Checking")
+Gui.frmPrint.cmdLogon.Create(Button)
+Gui.frmPrint.cmdLogon.Size(915,375)
+Gui.frmPrint.cmdLogon.Position(2460,165)
+Gui.frmPrint.cmdLogon.Parent("fraOpt")
+Gui.frmPrint.cmdLogon.Caption("Logon")
+Gui.frmPrint.cmdLogon.Event(Click,cmdLogon_Click)
+Gui.frmPrint.cmdPrint.Create(Button)
+Gui.frmPrint.cmdPrint.Size(1320,375)
+Gui.frmPrint.cmdPrint.Position(9150,195)
+Gui.frmPrint.cmdPrint.Caption("Print")
+Gui.frmPrint.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.frmPrint.lblSO.Create(Label,"Sales Order:",True,1935,255,0,90,75,True,0,"Arial",8,-2147483633,0)
+Gui.frmPrint.lblSO.FontStyle(True,False,False,False,False)
+Gui.frmPrint.gsgcMulti.Create(GsGridControl)
+Gui.frmPrint.gsgcMulti.Size(10380,1755)
+Gui.frmPrint.gsgcMulti.Position(60,2925)
+Gui.frmPrint.gsgcMulti.Event(RowCellClick,gsgcMulti_RowCellClick)
+Gui.frmPrint.gsgcFlexSched.Create(GsGridControl)
+Gui.frmPrint.gsgcFlexSched.Size(10380,2100)
+Gui.frmPrint.gsgcFlexSched.Position(60,4950)
+Gui.frmPrint.gsgcFlexSched.Event(RowCellClick,gsgcFlexSched_RowCellClick)
+Gui.frmPrint.txtPickCopy.Create(TextBox,"1",True,705,300,0,75,8910,True,0,"Arial",8,-2147483643,1)
+Gui.frmPrint.lblPickList.Create(Label,"Pick List Copies",True,1455,255,0,810,8985,True,0,"Arial",8,-2147483633,0)
+Gui.frmPrint.lblPickList.FontStyle(True,False,False,False,False)
+Gui.frmPrint.lblParts.Create(Label,"Parts:",True,1935,255,0,75,645,True,0,"Arial",8,-2147483633,0)
+Gui.frmPrint.lblParts.FontStyle(True,False,False,False,False)
+Gui.frmPrint.lblBOM.Create(Label,"Multi-level BOM Explosion:",True,2355,255,0,90,2715,True,0,"Arial",8,-2147483633,0)
+Gui.frmPrint.lblBOM.FontStyle(True,False,False,False,False)
+Gui.frmPrint.lblFlex.Create(Label,"Flex Schedules:",True,1935,255,0,75,4740,True,0,"Arial",8,-2147483633,0)
+Gui.frmPrint.lblFlex.FontStyle(True,False,False,False,False)
+Gui.frmPrint.cmdSelectall.Create(Button)
+Gui.frmPrint.cmdSelectall.Size(1320,375)
+Gui.frmPrint.cmdSelectall.Position(6480,195)
+Gui.frmPrint.cmdSelectall.Caption("Select All")
+Gui.frmPrint.cmdSelectall.Event(Click,cmdSelectall_Click)
+Gui.frmPrint.lblFlexCover.Create(Label,"Flex Cover Page:",True,1935,255,0,75,7125,True,0,"Arial",8,-2147483633,0)
+Gui.frmPrint.lblFlexCover.FontStyle(True,False,False,False,False)
+Gui.frmPrint.gsgcFlexcover.Create(GsGridControl)
+Gui.frmPrint.gsgcFlexcover.Size(10305,1470)
+Gui.frmPrint.gsgcFlexcover.Position(60,7335)
+Gui.frmPrint.gsgcFlexcover.Event(RowCellClick,gsgcFlexcover_RowCellClick)
+Gui.frmPrint.cmdDeSelectall.Create(Button)
+Gui.frmPrint.cmdDeSelectall.Size(1320,375)
+Gui.frmPrint.cmdDeSelectall.Position(7815,195)
+Gui.frmPrint.cmdDeSelectall.Caption("Deselect All")
+Gui.frmPrint.cmdDeSelectall.Event(Click,cmdDeSelectall_Click)
+Gui.frmPrint.cmdPrintPick.Create(Button)
+Gui.frmPrint.cmdPrintPick.Size(1230,375)
+Gui.frmPrint.cmdPrintPick.Position(2295,8850)
+Gui.frmPrint.cmdPrintPick.Caption("Print Pick List")
+Gui.frmPrint.cmdPrintPick.Event(Click,cmdPrintPick_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.opencompanyconnection(60)
+	f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	gui.frmPrint.gsgcSingle.anchor(15)
+	gui.frmPrint.gsgcMulti.anchor(14)
+	gui.frmPrint.gsgcFlexSched.anchor(14)
+	GUI.frmPrint.lblBOM.anchor(6)
+	gui.frmPrint.lblFlex.anchor(6)
+	gui.frmPrint.txtPickCopy.anchor(6)
+	gui.frmPrint.lblPickList.anchor(6)
+	gui.frmPrint.cmdPrint.anchor(6)
+	gui.frmPrint.cmdSelectall.anchor(6)
+	gui.frmPrint..Show
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(frmPrint_UnLoad)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.cmdLogon_Click.Start
+f.Intrinsic.Control.CallSub(grabWO,"Logon","Y")
+Program.Sub.cmdLogon_Click.End
+
+Program.Sub.setColumnProperties.Start
+'Part Document Control
+v.Local.sSelect.Declare
+v.Local.iCnt2.Declare
+v.Local.lRet.Declare
+gui.frmPrint.gsgcSingle.AddGridviewFromDatatable("gvSing","dtSing")
+gui.frmPrint.gsgcMulti.AddGridviewFromDatatable("gvBOM","dtBOM")
+gui.frmPrint.gsgcFlexSched.AddGridviewFromDatatable("gvFlex","dtFlexDist")
+gui.frmPrint.gsgcFlexcover.AddGridviewFromDatatable("gvFlexCover","dtFlexCovr")
+
+Gui.frmPrint.gsgcSingle.SetGridViewProperty("gvSing","Enableappearanceoddrow",True)
+Gui.frmPrint.gsgcMulti.SetGridViewProperty("gvBOM","Enableappearanceoddrow",True)
+Gui.frmPrint.gsgcFlexSched.SetGridViewProperty("gvFlex","Enableappearanceoddrow",True)
+Gui.frmPrint.gsgcFlexcover.SetGridViewProperty("gvFlexCover","Enableappearanceoddrow",True)
+
+gui.frmPrint.gsgcSingle.columnEdit("gvSing","PrintDocs","EditorButton","Print")
+gui.frmPrint.gsgcMulti.columnEdit("gvBOM","PrintDocs","EditorButton","Print")
+gui.frmPrint.gsgcFlexSched.columnEdit("gvFlex","PrintDocs","EditorButton","Print")
+gui.frmPrint.gsgcFlexSched.columnEdit("gvFlex","PrintFlex","EditorButton","Print")
+gui.frmPrint.gsgcMulti.columnEdit("gvBOM","Printcopies","EditorButton","Print Copies")
+gui.frmPrint.gsgcFlexcover.columnEdit("gvFlexCover","PrintCover","EditorButton","Print")
+
+'Set columns up
+'Select Line
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SELECTDOCLINE","Caption","Select")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SELECTDOCLINE","AllowEdit",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SELECTDOCLINE","Visible",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SELECTDOCLINE","ReadOnly",False)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SELECTDOCLINE","MinWidth","15")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SELECTDOCLINE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SELECTDOCLINE","CellHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SELECTDOCLINE","HeaderFontBold",True)
+'Sales Order
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER","Caption","Sales Order")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER","AllowEdit",False)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER","Visible",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER","ReadOnly",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER","MinWidth","75")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER","CellHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER","HeaderFontBold",True)
+'Sales order line
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER_LINE","Caption","Sales Order Line")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER_LINE","AllowEdit",False)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER_LINE","Visible",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER_LINE","ReadOnly",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER_LINE","MinWidth","75")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER_LINE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER_LINE","CellHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","SALES_ORDER_LINE","HeaderFontBold",True)
+'Part
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","Caption","Part")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","AllowEdit",False)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","Visible",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","ReadOnly",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","MinWidth","85")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","CellHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","HeaderFontBold",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PART","CellForeColor","Blue")
+'Description
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","DESCRIPTION","Caption","Description")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","DESCRIPTION","AllowEdit",False)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","DESCRIPTION","Visible",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","DESCRIPTION","ReadOnly",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","DESCRIPTION","MinWidth","125")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","DESCRIPTION","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","DESCRIPTION","CellHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","DESCRIPTION","HeaderFontBold",True)
+'Print Docs
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PrintDocs","Caption","Print Shop Docs")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PrintDocs","AllowEdit",False)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PrintDocs","Visible",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PrintDocs","ReadOnly",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PrintDocs","MinWidth","75")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PrintDocs","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PrintDocs","CellHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","PrintDocs","HeaderFontBold",True)
+
+'Multi level is next
+'Select Doc Line
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTDOCLINE","Caption","Select")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTDOCLINE","AllowEdit",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTDOCLINE","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTDOCLINE","ReadOnly",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTDOCLINE","MinWidth","25")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTDOCLINE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTDOCLINE","CellHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTDOCLINE","HeaderFontBold",True)
+'Select line
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTLINE","Caption","Select")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTLINE","AllowEdit",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTLINE","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTLINE","ReadOnly",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTLINE","MinWidth","25")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTLINE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTLINE","CellHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SELECTLINE","HeaderFontBold",True)
+'Sales Order
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER","Caption","Sales Order")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER","AllowEdit",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER","ReadOnly",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER","MinWidth","75")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER","CellHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER","HeaderFontBold",True)
+'Sales order line
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER_LINE","Caption","Sales Order Line")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER_LINE","AllowEdit",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER_LINE","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER_LINE","ReadOnly",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER_LINE","MinWidth","75")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER_LINE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER_LINE","CellHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","SALES_ORDER_LINE","HeaderFontBold",True)
+'Part
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","Caption","Part")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","AllowEdit",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","ReadOnly",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","MinWidth","85")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","CellHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","HeaderFontBold",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PART","CellForeColor","Blue")
+'Description
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","DESCRIPTION","Caption","Description")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","DESCRIPTION","AllowEdit",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","DESCRIPTION","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","DESCRIPTION","ReadOnly",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","DESCRIPTION","MinWidth","125")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","DESCRIPTION","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","DESCRIPTION","CellHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","DESCRIPTION","HeaderFontBold",True)
+'Print Docs
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PrintDocs","Caption","Print Shop Docs")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PrintDocs","AllowEdit",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PrintDocs","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PrintDocs","ReadOnly",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PrintDocs","MinWidth","75")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PrintDocs","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PrintDocs","CellHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PrintDocs","HeaderFontBold",True)
+'Copies
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","Caption","Copies")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","AllowEdit",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","ReadOnly",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","MinWidth","15")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","CellHAlignment","Right")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","HeaderFontBold",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","COPIES","CellBackColor","LightYellow")
+'Copies
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PRINTCOPIES","Caption","Print Copies")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PRINTCOPIES","AllowEdit",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PRINTCOPIES","Visible",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PRINTCOPIES","ReadOnly",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PRINTCOPIES","MinWidth","15")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PRINTCOPIES","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PRINTCOPIES","CellHAlignment","Right")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","PRINTCOPIES","HeaderFontBold",True)
+
+'FlexSchedule
+'Select Doc Line
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTDOCLINE","Caption","Select")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTDOCLINE","AllowEdit",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTDOCLINE","Visible",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTDOCLINE","ReadOnly",False)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTDOCLINE","MinWidth","15")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTDOCLINE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTDOCLINE","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTDOCLINE","HeaderFontBold",True)
+'Select line
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTLINE","Caption","Select")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTLINE","AllowEdit",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTLINE","Visible",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTLINE","ReadOnly",False)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTLINE","MinWidth","15")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTLINE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTLINE","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SELECTLINE","HeaderFontBold",True)
+'Sales Order
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SCHEDULE","Caption","Schedule")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SCHEDULE","AllowEdit",False)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SCHEDULE","Visible",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SCHEDULE","ReadOnly",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SCHEDULE","MinWidth","75")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SCHEDULE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SCHEDULE","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","SCHEDULE","HeaderFontBold",True)
+'Sales order line
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","LABOR_WC","Caption","Workcentre")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","LABOR_WC","AllowEdit",False)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","LABOR_WC","Visible",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","LABOR_WC","ReadOnly",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","LABOR_WC","MinWidth","75")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","LABOR_WC","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","LABOR_WC","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","LABOR_WC","HeaderFontBold",True)
+'Part
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","OPERATION","Caption","Operation")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","OPERATION","AllowEdit",False)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","OPERATION","Visible",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","OPERATION","ReadOnly",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","OPERATION","MinWidth","85")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","OPERATION","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","OPERATION","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","OPERATION","HeaderFontBold",True)
+'Description
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintFlex","Caption","Print Flex")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintFlex","AllowEdit",False)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintFlex","Visible",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintFlex","ReadOnly",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintFlex","MinWidth","75")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintFlex","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintFlex","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintFlex","HeaderFontBold",True)
+'Print Docs
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintDocs","Caption","Print Docs")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintDocs","AllowEdit",False)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintDocs","Visible",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintDocs","ReadOnly",True)
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintDocs","MinWidth","75")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintDocs","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintDocs","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexSched.SetColumnProperty("gvFlex","PrintDocs","HeaderFontBold",True)
+
+'Flex Schedule Cover
+'Select line
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","SELECTLINE","Caption","Select")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","SELECTLINE","AllowEdit",True)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","SELECTLINE","Visible",True)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","SELECTLINE","ReadOnly",False)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","SELECTLINE","MinWidth","15")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","SELECTLINE","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","SELECTLINE","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","SELECTLINE","HeaderFontBold",True)
+'WC
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","WC","Caption","WC")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","WC","AllowEdit",False)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","WC","Visible",True)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","WC","ReadOnly",True)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","WC","MinWidth","75")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","WC","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","WC","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","WC","HeaderFontBold",True)
+'Print cover
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","PrintCover","Caption","Print cover")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","PrintCover","AllowEdit",False)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","PrintCover","Visible",True)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","PrintCover","ReadOnly",True)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","PrintCover","MinWidth","75")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","PrintCover","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","PrintCover","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","PrintCover","HeaderFontBold",True)
+'Print cover
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","Job","Caption","Job")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","Job","AllowEdit",False)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","Job","Visible",True)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","Job","ReadOnly",True)
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","Job","MinWidth","75")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","Job","HeaderHAlignment","Center")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","Job","CellHAlignment","Center")
+Gui.frmPrint.gsgcFlexcover.SetColumnProperty("gvFlexCover","Job","HeaderFontBold",True)
+
+'Document Links
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","CellHAlignment","Center")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","HeaderFontBold",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","Icon","DCS-OFF")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","AllowEdit",False)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","Caption","Docs")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","ReadOnly",True)
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","MinWidth","35")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","Width","35")
+Gui.frmPrint.gsgcSingle.SetColumnProperty("gvSing","Documents","Visible",True)
+F.Data.DataTable.Select("dtSing","Documents = 'DCS-ON'",V.Local.sSelect)
+F.Intrinsic.Control.If(V.Local.sSelect.IsNotNoReturn)
+	F.Intrinsic.String.Split(V.Local.sSelect,"*!*",V.Local.sSelect)
+	F.Intrinsic.Control.For(V.Local.iCnt2,0,V.Local.sSelect.UBound,1)
+		F.Intrinsic.Control.If(V.DataTable.dtSing(V.Local.iCnt2).RowState,<>,8)
+			gui.frmPrint.gsgcSingle.GetColumnIndexByName("gvSing","Documents",v.Local.lret)
+			gui.frmPrint.gsgcSingle.SetCellAppearance("gvSing",v.Local.lret,V.Local.sSelect(V.Local.iCnt2),"Icon","DCS-ON")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt2)
+F.Intrinsic.Control.EndIf
+
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","CellHAlignment","Center")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","HeaderFontBold",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","Icon","DCS-OFF")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","AllowEdit",False)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","Caption","Docs")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","ReadOnly",True)
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","MinWidth","35")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","Width","35")
+Gui.frmPrint.gsgcMulti.SetColumnProperty("gvBOM","Documents","Visible",True)
+F.Data.DataTable.Select("dtBOM","Documents = 'DCS-ON'",V.Local.sSelect)
+F.Intrinsic.Control.If(V.Local.sSelect.IsNotNoReturn)
+	F.Intrinsic.String.Split(V.Local.sSelect,"*!*",V.Local.sSelect)
+	F.Intrinsic.Control.For(V.Local.iCnt2,0,V.Local.sSelect.UBound,1)
+		gui.frmPrint.gsgcMulti.GetColumnIndexByName("gvBOM","Documents",v.Local.lret)
+		gui.frmPrint.gsgcMulti.SetCellAppearance("gvBOM",v.Local.lret,V.Local.sSelect(V.Local.iCnt2),"Icon","DCS-ON")
+	F.Intrinsic.Control.Next(V.Local.iCnt2)
+F.Intrinsic.Control.EndIf
+Program.Sub.setColumnProperties.End
+
+Program.Sub.GrabWO.Start
+F.Intrinsic.Control.Try
+	v.Local.ssql.Declare
+	v.Local.sSO.Declare
+	V.Local.sEmpNo.Declare
+	v.Local.sParam.Declare
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare
+	v.Local.sSeq.Declare
+	v.Local.sWC.Declare
+	v.Local.sMsg.Declare
+	v.Local.i.Declare
+	v.Local.j.Declare(long)
+	V.Local.k.Declare(long)
+	v.Local.sSO.Set(v.Screen.frmPrint!txtSONumb.text)
+	v.Local.sret.Declare
+	'Hide grids
+	gui.frmPrint.gsgcFlexSched.visible(false)
+	gui.frmPrint.gsgcMulti.visible(false)
+	gui.frmPrint.gsgcSingle.visible(false)
+	gui.frmPrint.gsgcFlexcover.visible(false)
+	
+	'Get employee
+	F.Global.Security.GetEmpNoFromUser(v.Caller.User,v.Local.sEmpNo)
+	
+	'Grab Single Level drawings
+	f.Intrinsic.String.Build("SELECT SALES_ORDER, SALES_ORDER_LINE, rtrim(PART) as Part,  rtrim(DESCRIPTION) As 'Description' , CAST(0 AS BIT) AS 'SelectDocLine', 'Print' as 'PrintDocs', 'DCS-OFF' as 'Documents' FROM V_JOB_HEADER WHERE SALES_ORDER='{0}'",v.Local.sSO.Trim,v.Local.ssql)
+	f.Intrinsic.Control.If(v.DataTable.dtSing.Exists)
+		f.Data.DataTable.Close("dtSing")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("dtSing","con",v.Local.ssql,true)
+		
+	'Grab BOM drawings
+	f.Intrinsic.String.Build("SELECT SALES_ORDER, SALES_ORDER_LINE, rtrim(A.PART) as Part,  rtrim(DESCRIPTION) As 'Description', CAST(0 AS BIT) AS 'SelectLine', 1 AS 'Copies', 'Print Copies' as 'PrintCopies',  CAST(0 AS BIT) AS 'SelectDocLine', 'Print' as 'PrintDocs', 'DCS-OFF' as 'Documents' FROM V_JOB_HEADER A INNER JOIN V_BOM_MSTR B ON A.PART=B.PARENT WHERE SALES_ORDER='{0}'",v.Local.sSO.Trim,v.Local.ssql)
+	f.Intrinsic.Control.If(v.DataTable.dtBOMTMP.Exists)
+		f.Data.DataTable.Close("dtBOMTMP")
+		F.Data.DataTable.Close("dtBOM")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("dtBOMTMP","con",v.Local.ssql,true)
+	f.Data.DataView.Create("dtBOMTMP","dvBOMTMP")
+	F.Data.DataView.ToDataTableDistinct("dtBOMTMP","dvBOMTMP","dtBOM","SALES_ORDER*!*SALES_ORDER_LINE*!*PART*!*DESCRIPTION*!*SelectLine*!*COPIES*!*PRINTCOPIES*!*SelectDocLine*!*PRINTDOCS*!*DOCUMENTS",true)
+	gui.frmPrint.gsgcMulti.DataSource("dtBOM")
+	
+	'Create Flex schedule report table basis
+	f.Intrinsic.Control.If(v.DataTable.dtFlex.Exists)
+		f.Data.DataTable.Close("dtFlex")
+	f.Intrinsic.Control.EndIf
+	F.Data.DataTable.CreateFromSQL("dtFlex","con","SELECT  SCHEDULE, LABOR_WC, '' as OPERATION,  CAST(0 AS BIT) AS 'SelectLine', 'Print Flex' as 'PrintFlex', CAST(0 AS BIT) AS 'SelectDocLine', 'Print Docs' as 'PrintDocs' FROM V_JOB_CT_FLX_SCHD WHERE JOB='BOGUSJ123'",true)
+	f.Data.DataView.Create("dtFlex","dvFlex")
+	
+	'Populate the datatables document link from dictionary
+	F.Data.Dictionary.CreateFromSQL("dDCC","con","Select rtrim(ID) As Part,'DCS-ON' As DCC From Link_Data Where Type = '00030'")
+	F.Data.Dictionary.SetDefaultReturn("dDCC","DCS-OFF")
+	F.Data.DataTable.FillFromDictionary("dtSing","dDCC","Part","Documents")
+	F.Data.DataTable.FillFromDictionary("dtBOM","dDCC","Part","Documents")
+	F.Data.Dictionary.Close("dDCC")
+	
+	'Delete from dtSing where bom exists
+	F.Intrinsic.Control.For(v.local.k,v.DataTable.dtSing.RowCount--,0,-1)
+		f.Intrinsic.String.Build("SELECT * FROM V_BOM_MSTR WHERE PARENT='{0}'",v.DataTable.dtSing(v.Local.k).PART!FIELDVALTRIM,v.Local.ssql)
+		f.ODBC.Connection!con.executeandreturn(v.Local.ssql,v.Local.sret)
+		f.Intrinsic.Control.If(v.Local.sret.Trim,<>,"")
+			f.Data.DataTable.DeleteRow("dtSing",v.Local.k)
+		f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(v.Local.k)
+	gui.frmPrint.gsgcSingle.DataSource("dtSing")
+	
+	'Scroll through the jobs
+	f.Intrinsic.string.Build("SELECT * FROM V_JOB_HEADER WHERE SALES_ORDER='{0}'",v.Local.sSO.Trim,v.Local.ssql)
+	f.Intrinsic.Control.If(v.DataTable.dtJobs.exists)
+		f.Data.DataTable.Close("dtJobs")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("dtJobs","con",v.Local.ssql,true)
+	f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtJobs.RowCount--,1)
+		'Set the params
+		v.Local.sJob.Set(v.DataTable.dtJobs(v.Local.i).JOB!FIELDVALTRIM)
+		V.Local.sSuffix.Set(V.DataTable.dtJobs(V.Local.I).SUFFIX!FIELDVALTRIM)
+
+		'Grab Flex Schedules
+		f.Intrinsic.String.Build("SELECT DISTINCT  CAST(0 AS BIT) AS 'SelectLine', CAST(0 AS BIT) AS 'SelectDocLine', SCHEDULE, LABOR_WC, OPERATION, 'Print Flex' as 'PrintFlex', 'Print Docs' as 'PrintDocs'  FROM V_JOB_CT_FLX_SCHD A LEFT JOIN V_JOB_OPERATIONS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX AND A.LABOR_SEQ = B.SEQ WHERE A.JOB='{0}' AND A.SUFFIX='{1}'",v.Local.sJob,v.Local.sSuffix,v.Local.ssql)
+		f.Intrinsic.Control.If(v.DataTable.dtFlexTmp.Exists)
+			f.Data.DataTable.Close("dtFlexTmp")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataTable.CreateFromSQL("dtFlexTmp","con",v.Local.ssql)
+		F.Data.DataTable.Merge("dtFlexTmp","dtFlex",true,1)
+		
+		f.Intrinsic.Control.If(v.Args.Logon,=,"Y")
+			'Design Option
+			f.Intrinsic.Control.If(v.Screen.frmPrint!optDes.Value,=,"True")
+				f.Intrinsic.String.Build("SELECT SEQ, PART FROM V_JOB_OPERATIONS WHERE JOB='{0}' AND SUFFIX='{1}' AND (PART='DWPD' or PART='DWRD')",v.DataTable.dtJobs(v.Local.i).JOB!FIELDVALTRIM,V.DataTable.dtJobs(v.Local.i).SUFFIX!FIELDVALTRIM,v.Local.ssql)
+				f.Intrinsic.Control.If(v.DataTable.dtTmpSeq.Exists)
+					f.Data.DataTable.Close("dtTmpSeq")
+				f.Intrinsic.Control.EndIf
+				f.Data.DataTable.CreateFromSQL("dtTmpSeq","con",v.Local.ssql)
+				f.Intrinsic.Control.For(v.Local.j,0,v.DataTable.dtTmpSeq.RowCount--,1)
+					v.Local.sSeq.Set(v.DataTable.dtTmpSeq(v.Local.j).SEQ!FIELDVALTRIM)
+					v.Local.sWC.Set(v.DataTable.dtTmpSeq(v.Local.j).PART!FIELDVALTRIM)
+					'Log employee onto job
+					f.Intrinsic.String.ConcatCallWrapperArgs(v.Local.sjob,V.Local.sSuffix,V.Local.sSeq,V.Local.sWC,v.local.sEmpNo,v.Local.sParam)
+					f.Global.General.CallWrapperAsync(9200,v.Local.sParam)
+					f.Intrinsic.String.Concat(v.Local.sMsg,"Job ",v.Local.sJob,"-",v.Local.sSuffix," logged on",v.Ambient.NewLine,v.Local.sMsg)
+				f.Intrinsic.Control.Next(v.Local.j)
+			f.Intrinsic.Control.EndIf
+			
+			'Check option
+			f.Intrinsic.Control.If(v.Screen.frmPrint!optChk.Value,=,"True")
+				f.Intrinsic.String.Build("SELECT SEQ, PART FROM V_JOB_OPERATIONS WHERE JOB='{0}' AND SUFFIX='{1}' AND (PART='DWPC' or PART='DWRC')",v.DataTable.dtJobs(v.Local.i).JOB!FIELDVALTRIM,V.DataTable.dtJobs(v.Local.i).SUFFIX!FIELDVALTRIM,v.Local.ssql)
+				f.Intrinsic.Control.If(v.DataTable.dtTmpSeq.Exists)
+					f.Data.DataTable.Close("dtTmpSeq")
+				f.Intrinsic.Control.EndIf
+				f.Data.DataTable.CreateFromSQL("dtTmpSeq","con",v.Local.ssql)
+				f.Intrinsic.Control.For(v.Local.j,0,v.DataTable.dtTmpSeq.RowCount--,1)
+					v.Local.sSeq.Set(v.DataTable.dtTmpSeq(v.Local.j).SEQ!FIELDVALTRIM)
+					v.Local.sWC.Set(v.DataTable.dtTmpSeq(v.Local.j).PART!FIELDVALTRIM)
+					'Log employee onto job
+					f.Intrinsic.String.ConcatCallWrapperArgs(v.Local.sjob,V.Local.sSuffix,V.Local.sSeq,V.Local.sWC,v.local.sEmpNo,v.Local.sParam)
+					f.Global.General.CallWrapperAsync(9200,v.Local.sParam)
+					f.Intrinsic.String.Concat(v.Local.sMsg,"Job ",v.Local.sJob,"-",v.Local.sSuffix," logged on",v.Ambient.NewLine,v.Local.sMsg)
+				f.Intrinsic.Control.Next(v.Local.j)
+			f.Intrinsic.Control.EndIf
+	
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.Next(v.Local.i)
+	
+	'Set to 0
+	V.Local.k.Set(0)
+	v.Local.j.Set(0)
+	
+	f.Intrinsic.Control.If(v.Args.Logon,=,"Y")
+		'Display Message
+		f.Intrinsic.Control.If(v.Local.sMsg.Trim,=,"")
+			f.Intrinsic.UI.Msgbox("No jobs to log onto")
+		f.Intrinsic.Control.Else
+			f.Intrinsic.UI.Msgbox(v.Local.sMsg)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	'All Distinct Flex Schdules
+	f.Intrinsic.Control.If(v.DataTable.dtFlexDist.Exists)
+		f.Data.DataTable.Close("dtFlexDist")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.ToDataTableDistinct("dtFlex","dvFlex","dtFlexDist","SCHEDULE*!*LABOR_WC*!*OPERATION*!*SELECTLINE*!*PRINTFLEX*!*SELECTDOCLINE*!*PRINTDOCS",true)
+	gui.frmPrint.gsgcFlexSched.DataSource("dtFlexDist")
+	
+	'Flex WC Distinct
+	f.Intrinsic.Control.If(v.DataTable.dtFlexWCDist.Exists)
+		f.Data.DataTable.Close("dtFlexWCDist")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.ToDataTableDistinct("dtFlex","dvFlex","dtFlexWCDist","LABOR_WC",true)
+	
+	'Create flex Cover datatable
+	f.Intrinsic.Control.If(v.DataTable.dtFlexCovr.Exists)
+		f.Data.DataTable.Close("dtFlexCovr")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.Create("dtFlexCovr",true)
+	f.Data.DataTable.AddColumn("dtFlexCovr","Job","string")
+	f.Data.DataTable.AddColumn("dtFlexCovr","WC","string")
+	f.Data.DataTable.AddColumn("dtFlexCovr","SelectLine","boolean")
+	f.Data.DataTable.AddColumn("dtFlexCovr","PrintCover","string","Print Cover")
+	
+	'Create distinct job master table
+	f.Intrinsic.Control.If(v.DataTable.dtjobsmast.Exists)
+		f.Data.DataTable.Close("dtJobsMast")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Create("dtJobs","dvJobs")
+	f.Data.DataView.ToDataTableDistinct("dtJobs","dvJobs","dtJobsMast","JOB",true)
+	
+	'Add the jobs to the flex cover database
+	f.Intrinsic.Control.For(v.Local.k,0,v.DataTable.dtFlexWCDist.RowCount--,1)
+		f.Intrinsic.Control.For(v.Local.j,0,v.DataTable.dtjobsmast.RowCount--,1)
+			F.Data.DataTable.AddRow("dtFlexCovr","Job",v.DataTable.dtJobsmast(v.Local.j).JOB!FIELDVALTRIM,"WC",v.DataTable.dtflexWCDist(v.Local.k).LABOR_WC!FIELDVALTRIM,"SelectLine",False)
+		f.Intrinsic.Control.Next(v.Local.j)
+	f.Intrinsic.Control.Next(v.Local.k)
+	
+	gui.frmPrint.gsgcFlexcover.DataSource("dtFlexCovr")
+	
+	f.Intrinsic.Control.CallSub(SetColumnProperties)
+	
+	'Show Grids
+	gui.frmPrint.gsgcFlexcover.visible(true)
+	gui.frmPrint.gsgcFlexSched.visible(true)
+	gui.frmPrint.gsgcMulti.visible(true)
+	gui.frmPrint.gsgcSingle.visible(true)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+	F.Intrinsic.Control.CallSub(frmPrint_Unload)
+F.Intrinsic.Control.EndTry
+Program.Sub.GrabWO.End
+
+Program.Sub.cmdBrowse_Click.Start
+V.Local.sSQL.Declare(String)
+V.Local.sCol.Declare(String)
+V.Local.sColW.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.set("SELECT ORDER_NO, NAME_CUSTOMER FROM V_ORDER_BILL_TO")
+'Split Column Names into an array (*!* delimited string)
+F.Intrinsic.String.Split("Order#*!*Customer Name","*!*",V.Local.sCol)
+'Split Column widths into an array (*!* delimited string)
+F.Intrinsic.String.Split("725*!*3100","*!*",V.Local.sColW)
+F.Intrinsic.UI.Browser("Select an Order","con",V.Local.sSQL,V.Local.sCol,V.Local.sColW,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	gui.frmPrint.txtSONumb.Text(v.Local.sRet(0))
+	f.Intrinsic.Control.CallSub(GrabWO,"Logon","N")
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdBrowse_Click.End
+
+Program.Sub.frmPrint_UnLoad.Start
+f.ODBC.Connection!con.Close
+f.Intrinsic.Control.End
+Program.Sub.frmPrint_UnLoad.End
+
+Program.Sub.cmdPrint_Click.Start
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.gsgcSingle_RowCellClick.Start
+v.Local.sPart.Declare
+v.Local.sparams.Declare
+v.Local.iRefID.Declare
+v.Local.sLinkID.Declare
+v.Local.iLinkID.Declare
+V.Local.sTemp.Declare
+v.Local.iPID.Declare
+v.Local.sSQL.Declare
+v.Local.i.Declare
+
+F.Intrinsic.Control.SelectCase(v.Args.Column)
+	F.Intrinsic.Control.CaseAny("PART","Part")
+		v.Local.sPart.Set(v.Args.cellvalue)
+		F.Intrinsic.String.Build("{0}!*!{1}!*!M",v.Local.sPart,"",V.Local.sParams)
+		F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+		gui.frmPrint..SetFocus
+		
+	f.Intrinsic.Control.caseany("DOCUMENTS","Documents")
+		Gui.frmPrint.gsgcSingle.GetCellValueByColumnName("gvSing","Part",V.Args.RowIndex,V.Local.sPart)
+		f.Global.DocumentControl.GetLinkID(v.Local.sPart.Trim,30,v.Local.iRefID)
+		f.Intrinsic.Control.If(v.Local.irefid,=,-1)
+			F.ODBC.Connection!con.ExecuteAndReturn("SELECT MAX(LINK_ID) AS 'LinkID' FROM LINK_DATA",v.Local.sLinkID)
+			f.Intrinsic.Math.ConvertToLong(v.Local.sLinkID,v.Local.iLinkID)
+			f.Intrinsic.Math.Add(v.Local.iLinkID,1,v.Local.iLinkID)
+			f.Intrinsic.string.LPad(v.Local.iLinkID,"0",9,v.Local.sLinkID)
+			V.Local.iRefID.Set(v.Local.iLinkID)
+			F.Global.DocumentControl.CreateReference(V.Local.sPart,"00030",V.Local.iRefID)
+		f.Intrinsic.Control.EndIf
+		F.Global.DocumentControl.Invoke(V.Local.sPart,30,"(Inventory Master)",V.Local.iPID)
+		
+	f.Intrinsic.Control.caseany("PRINTDOCS","PrintDocs")
+		Gui.frmPrint.gsgcSingle.GetCellValueByColumnName("gvSing","Part",V.Args.RowIndex,V.Local.sPart)
+		f.Global.DocumentControl.GetLinkID(v.Local.sPart.Trim,30,v.Local.iLinkID)
+		f.Intrinsic.Control.If(v.Local.irefid,<>,-1)
+			F.Intrinsic.String.Concat("SELECT * FROM ATG_DOC_ASSOC WHERE LINK_ID = ",V.Local.iLinkID," AND GRP_ID = 3",V.Local.sSQL)
+			f.Data.DataTable.CreateFromSQL("dtDocs","con",v.Local.ssql)
+			F.Intrinsic.Control.If(V.DataTable.dtDocs.RowCount,=,0)
+				F.Intrinsic.UI.Msgbox("No Shop Documents to Print.")
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtDocs.RowCount--,1)
+					F.Intrinsic.String.Right(v.DataTable.dtDocs(v.Local.i).PATH!fieldvaltrim,1,V.Local.stemp)
+					F.Intrinsic.Control.If(V.Local.stemp,=,"\")
+						F.Intrinsic.String.Concat(v.DataTable.dtDocs(v.Local.i).PATH!fieldvaltrim,v.DataTable.dtdocs(v.Local.i).FILE!fieldvaltrim,V.Local.stemp)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Concat(v.DataTable.dtDocs(v.Local.i).PATH!FIELDVALTRIM,"\",v.DataTable.dtdocs(v.Local.i).FILE!fieldvaltrim,V.Local.stemp)
+					F.Intrinsic.Control.endif												
+					F.Intrinsic.task.ShellExec(V.Caller.Handle,"PRINT",V.local.sTemp,"","",5)
+					f.Intrinsic.UI.SleepMS(3000)
+				f.Intrinsic.Control.Next(v.Local.i)
+			F.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+f.Intrinsic.Control.EndSelect
+
+Program.Sub.gsgcSingle_RowCellClick.End
+
+Program.Sub.gsgcMulti_RowCellClick.Start
+v.Local.sPart.Declare
+v.Local.sparams.Declare
+v.Local.iRefID.Declare
+v.Local.sLinkID.Declare
+v.Local.iLinkID.Declare
+V.Local.sTemp.Declare
+v.Local.iPID.Declare
+v.Local.sSQL.Declare
+v.Local.i.Declare
+
+F.Intrinsic.Control.SelectCase(v.Args.Column)
+	F.Intrinsic.Control.CaseAny("PART","Part")
+		v.Local.sPart.Set(v.Args.cellvalue)
+		F.Intrinsic.String.Build("{0}!*!{1}!*!M",v.Local.sPart,"",V.Local.sParams)
+		F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+		gui.frmPrint..SetFocus
+		
+	f.Intrinsic.Control.caseany("DOCUMENTS","Documents")
+		Gui.frmPrint.gsgcMulti.GetCellValueByColumnName("gvBOM","Part",V.Args.RowIndex,V.Local.sPart)
+		f.Global.DocumentControl.GetLinkID(v.Local.sPart.Trim,30,v.Local.iRefID)
+		f.Intrinsic.Control.If(v.Local.irefid,=,-1)
+			F.ODBC.Connection!con.ExecuteAndReturn("SELECT MAX(LINK_ID) AS 'LinkID' FROM LINK_DATA",v.Local.sLinkID)
+			f.Intrinsic.Math.ConvertToLong(v.Local.sLinkID,v.Local.iLinkID)
+			f.Intrinsic.Math.Add(v.Local.iLinkID,1,v.Local.iLinkID)
+			f.Intrinsic.string.LPad(v.Local.iLinkID,"0",9,v.Local.sLinkID)
+			V.Local.iRefID.Set(v.Local.iLinkID)
+			F.Global.DocumentControl.CreateReference(V.Local.sPart,"00030",V.Local.iRefID)
+		f.Intrinsic.Control.EndIf
+		F.Global.DocumentControl.Invoke(V.Local.sPart,30,"(Inventory Master)",V.Local.iPID)
+		
+	f.Intrinsic.Control.caseany("PRINTDOCS","PrintDocs")
+		Gui.frmPrint.gsgcMulti.GetCellValueByColumnName("gvBOM","Part",V.Args.RowIndex,V.Local.sPart)
+		f.Global.DocumentControl.GetLinkID(v.Local.sPart.Trim,30,v.Local.iLinkID)
+		f.Intrinsic.Control.If(v.Local.irefid,<>,-1)
+			F.Intrinsic.String.Concat("SELECT * FROM ATG_DOC_ASSOC WHERE LINK_ID = ",V.Local.iLinkID," AND GRP_ID = 3",V.Local.sSQL)
+			f.Data.DataTable.CreateFromSQL("dtDocs","con",v.Local.ssql)
+			F.Intrinsic.Control.If(V.DataTable.dtDocs.RowCount,=,0)
+				F.Intrinsic.UI.Msgbox("No Shop Documents to Print.")
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtDocs.RowCount--,1)
+					F.Intrinsic.String.Right(v.DataTable.dtDocs(v.Local.i).PATH!fieldvaltrim,1,V.Local.stemp)
+					F.Intrinsic.Control.If(V.Local.stemp,=,"\")
+						F.Intrinsic.String.Concat(v.DataTable.dtDocs(v.Local.i).PATH!fieldvaltrim,v.DataTable.dtdocs(v.Local.i).FILE!fieldvaltrim,V.Local.stemp)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Concat(v.DataTable.dtDocs(v.Local.i).PATH!FIELDVALTRIM,"\",v.DataTable.dtdocs(v.Local.i).FILE!fieldvaltrim,V.Local.stemp)
+					F.Intrinsic.Control.endif												
+					F.Intrinsic.task.ShellExec(V.Caller.Handle,"PRINT",V.local.sTemp,"","",5)
+					f.Intrinsic.UI.SleepMS(3000)
+				f.Intrinsic.Control.Next(v.Local.i)
+			F.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+'	f.Intrinsic.Control.caseany("PRINTCOPIES","PrintCopies")
+'		Gui.frmPrint.gsgcSingle.GetCellValueByColumnName("gvSing","Part",V.Args.RowIndex,V.Local.sPart)
+'		f.Global.DocumentControl.GetLinkID(v.Local.sPart.Trim,30,v.Local.iLinkID)
+'		f.Intrinsic.Control.If(v.Local.irefid,<>,-1)
+'			F.Intrinsic.String.Concat("SELECT * FROM ATG_DOC_ASSOC WHERE LINK_ID = ",V.Local.iLinkID," AND GRP_ID = 3",V.Local.sSQL)
+'			f.Data.DataTable.CreateFromSQL("dtDocs","con",v.Local.ssql)
+'			F.Intrinsic.Control.If(V.DataTable.dtDocs.RowCount,=,0)
+'				F.Intrinsic.UI.Msgbox("No Shop Documents to Print.")
+'			f.Intrinsic.Control.Else
+'				f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtDocs.RowCount--,1)
+'					F.Intrinsic.String.Right(v.DataTable.dtDocs(v.Local.i).PATH!fieldvaltrim,1,V.Local.stemp)
+'					F.Intrinsic.Control.If(V.Local.stemp,=,"\")
+'						F.Intrinsic.String.Concat(v.DataTable.dtDocs(v.Local.i).PATH!fieldvaltrim,v.DataTable.dtdocs(v.Local.i).FILE!fieldvaltrim,V.Local.stemp)
+'					F.Intrinsic.Control.Else
+'						F.Intrinsic.String.Concat(v.DataTable.dtDocs(v.Local.i).PATH!FIELDVALTRIM,"\",v.DataTable.dtdocs(v.Local.i).FILE!fieldvaltrim,V.Local.stemp)
+'					F.Intrinsic.Control.endif												
+'					F.Intrinsic.task.ShellExec(V.Caller.Handle,"PRINT",V.local.sTemp,"","",5)
+'					f.Intrinsic.UI.SleepMS(3000)
+'				f.Intrinsic.Control.Next(v.Local.i)
+'			F.Intrinsic.Control.EndIf
+'		f.Intrinsic.Control.EndIf
+		
+f.Intrinsic.Control.EndSelect
+Program.Sub.gsgcMulti_RowCellClick.End
+
+Program.Sub.gsgcFlexSched_RowCellClick.Start
+v.Local.sPart.Declare
+v.Local.sSchedule.Declare
+v.Local.sparams.Declare
+v.Local.iRefID.Declare
+v.Local.sLinkID.Declare
+v.Local.iLinkID.Declare
+V.Local.sTemp.Declare
+v.Local.iPID.Declare
+v.Local.sSQL.Declare
+v.Local.i.Declare
+v.Local.iJob.Declare
+
+F.Intrinsic.Control.SelectCase(v.Args.Column)
+	F.Intrinsic.Control.CaseAny("PART","Part")
+		v.Local.sPart.Set(v.Args.cellvalue)
+		F.Intrinsic.String.Build("{0}!*!{1}!*!M",v.Local.sPart,"",V.Local.sParams)
+		F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+		gui.frmPrint..SetFocus
+		
+	f.Intrinsic.Control.caseany("DOCUMENTS","Documents")
+		Gui.frmPrint.gsgcFlexSched.GetCellValueByColumnName("gvFlex","Part",V.Args.RowIndex,V.Local.sPart)
+		f.Global.DocumentControl.GetLinkID(v.Local.sPart.Trim,30,v.Local.iRefID)
+		f.Intrinsic.Control.If(v.Local.irefid,=,-1)
+			F.ODBC.Connection!con.ExecuteAndReturn("SELECT MAX(LINK_ID) AS 'LinkID' FROM LINK_DATA",v.Local.sLinkID)
+			f.Intrinsic.Math.ConvertToLong(v.Local.sLinkID,v.Local.iLinkID)
+			f.Intrinsic.Math.Add(v.Local.iLinkID,1,v.Local.iLinkID)
+			f.Intrinsic.string.LPad(v.Local.iLinkID,"0",9,v.Local.sLinkID)
+			V.Local.iRefID.Set(v.Local.iLinkID)
+			F.Global.DocumentControl.CreateReference(V.Local.sPart,"00030",V.Local.iRefID)
+		f.Intrinsic.Control.EndIf
+		F.Global.DocumentControl.Invoke(V.Local.sPart,30,"(Inventory Master)",V.Local.iPID)
+		
+	f.Intrinsic.Control.caseany("PRINTDOCS","PrintDocs")
+		Gui.frmPrint.gsgcFlexSched.GetCellValueByColumnName("gvFlex","Schedule",V.Args.RowIndex,V.Local.sSchedule)
+		f.Intrinsic.String.Build("SELECT DISTINCT JOB, SUFFIX FROM V_JOB_CT_FLX_SCHD WHERE SCHEDULE='{0}'",V.LOCAL.sSchedule,V.Local.sSQL)
+		f.Intrinsic.Control.If(v.DataTable.dtFJob.Exists)
+			f.Data.DataTable.Close("dtFJob")
+		f.Intrinsic.Control.EndIf
+		F.Data.DataTable.CreateFromSQL("dtFJob","con",v.Local.ssql)
+		f.Intrinsic.Control.For(v.Local.iJob,0,v.DataTable.dtFJob.RowCount--,1)
+			f.Intrinsic.String.Build("SELECT PART FROM V_JOB_HEADER WHERE JOB='{0}' AND SUFFIX='{1}'",v.DataTable.dtFJOB(v.Local.iJob).JOB!FIELDVALTRIM,v.DataTable.dtFJob(v.Local.iJob).SUFFIX!FIELDVALTRIM,v.Local.ssql)
+			f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sPart)
+			f.Global.DocumentControl.GetLinkID(v.Local.sPart.Trim,30,v.Local.iLinkID)
+			f.Intrinsic.Control.If(v.Local.irefid,<>,-1)
+				F.Intrinsic.String.Concat("SELECT * FROM ATG_DOC_ASSOC WHERE LINK_ID = ",V.Local.iLinkID," AND GRP_ID = 3",V.Local.sSQL)
+				f.Intrinsic.Control.If(v.DataTable.dtDocs.Exists)
+					f.Data.DataTable.Close("dtDocs")
+				f.Intrinsic.Control.EndIf
+				f.Data.DataTable.CreateFromSQL("dtDocs","con",v.Local.ssql)
+				F.Intrinsic.Control.If(V.DataTable.dtDocs.RowCount,=,0)
+					F.Intrinsic.UI.Msgbox("No Shop Documents to Print.")
+				f.Intrinsic.Control.Else
+					f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtDocs.RowCount--,1)
+						F.Intrinsic.String.Right(v.DataTable.dtDocs(v.Local.i).PATH!fieldvaltrim,1,V.Local.stemp)
+						F.Intrinsic.Control.If(V.Local.stemp,=,"\")
+							F.Intrinsic.String.Concat(v.DataTable.dtDocs(v.Local.i).PATH!fieldvaltrim,v.DataTable.dtdocs(v.Local.i).FILE!fieldvaltrim,V.Local.stemp)
+						F.Intrinsic.Control.Else
+							F.Intrinsic.String.Concat(v.DataTable.dtDocs(v.Local.i).PATH!FIELDVALTRIM,"\",v.DataTable.dtdocs(v.Local.i).FILE!fieldvaltrim,V.Local.stemp)
+						F.Intrinsic.Control.endif												
+						F.Intrinsic.task.ShellExec(V.Caller.Handle,"PRINT",V.local.sTemp,"","",5)
+						f.Intrinsic.UI.SleepMS(1000)
+					f.Intrinsic.Control.Next(v.Local.i)
+				F.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf	
+		f.Intrinsic.Control.Next(v.Local.iJob)
+		
+	f.Intrinsic.Control.caseany("PRINTFLEX","PrintFlex")
+		Gui.frmPrint.gsgcFlexSched.GetCellValueByColumnName("gvFlex","Schedule",V.Args.RowIndex,V.Local.sSchedule)
+		f.Intrinsic.String.ConcatCallWrapperArgs("01/01/1900","01/01/1900",v.Local.sSchedule,"000",v.Local.sSchedule,"000","Y","Y",v.Local.sparams)
+		f.Global.General.CallWrapperAsync(900300,v.Local.sparams)
+		
+f.Intrinsic.Control.EndSelect
+Program.Sub.gsgcFlexSched_RowCellClick.End
+
+Program.Sub.gsgcFlexcover_RowCellClick.Start
+v.Local.sparams.Declare
+v.Local.sVals.Declare
+v.Local.lBIID.Declare
+v.Local.sJob.Declare
+v.Local.sWC.Declare
+
+F.Intrinsic.Control.SelectCase(v.Args.Column)
+	f.Intrinsic.Control.caseany("PRINTCOVER","PrintCover")
+		'Grab JOB & WC
+		Gui.frmPrint.gsgcFlexcover.GetCellValueByColumnName("gvFlexCover","Job",V.Args.RowIndex,V.Local.sJob)
+		Gui.frmPrint.gsgcFlexcover.GetCellValueByColumnName("gvFlexCover","WC",V.Args.RowIndex,V.Local.sWC)
+		'Get report's ID #
+		F.Global.BI.GetIDFromName("RS-SF_Flex_Cover.rpt",V.Local.lBIID)
+		'add params with appropriate values
+		f.Intrinsic.String.Concat("WORKORDER_WG - JOB*!*WORKORDER_WG - PART","",v.Local.sparams)
+		F.Intrinsic.String.Split(v.Local.sparams,"*!*",v.Local.sparams)
+		f.Intrinsic.String.Concat(V.Local.sJob,"*!*",V.Local.sWC,V.Local.sVals)
+		f.Intrinsic.String.Split(v.Local.sVals,"*!*",v.Local.svals)
+		'Print Report
+		f.global.BI.PrintReport(v.Local.lBIID,0,v.Local.sparams,v.Local.sVals,"",false)
+	
+f.Intrinsic.Control.EndSelect
+Program.Sub.gsgcFlexcover_RowCellClick.End
+
+Program.Sub.cmdSelectall_Click.Start
+v.Local.i.Declare
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtSing.RowCount--,1)
+	f.Data.DataTable.SetValue("dtSing",v.Local.i,"SelectDocLine",True)
+f.Intrinsic.Control.Next(v.Local.i)
+v.Local.i.Set(0)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtBOM.RowCount--,1)
+	f.Data.DataTable.SetValue("dtBOM",v.Local.i,"SelectLine",True,"SelectDocLine",True)
+f.Intrinsic.Control.Next(v.Local.i)
+v.Local.i.Set(0)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtFlexDist.RowCount--,1)
+	f.Data.DataTable.SetValue("dtFlexDist",v.Local.i,"SelectLine",True,"SelectDocLine",True)
+f.Intrinsic.Control.Next(v.Local.i)
+v.Local.i.Set(0)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtFlexCovr.RowCount--,1)
+	f.Data.DataTable.SetValue("dtFlexCovr",v.Local.i,"SelectLine",true)
+f.Intrinsic.Control.Next(v.Local.i)
+
+Program.Sub.cmdSelectall_Click.End
+
+Program.Sub.cmdDeSelectall_Click.Start
+v.Local.i.Declare
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtSing.RowCount--,1)
+	f.Data.DataTable.SetValue("dtSing",v.Local.i,"SelectDocLine",False)
+f.Intrinsic.Control.Next(v.Local.i)
+v.Local.i.Set(0)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtBOM.RowCount--,1)
+	f.Data.DataTable.SetValue("dtBOM",v.Local.i,"SelectLine",False,"SelectDocLine",False)
+f.Intrinsic.Control.Next(v.Local.i)
+v.Local.i.Set(0)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtFlexDist.RowCount--,1)
+	f.Data.DataTable.SetValue("dtFlexDist",v.Local.i,"SelectLine",False,"SelectDocLine",False)
+f.Intrinsic.Control.Next(v.Local.i)
+v.Local.i.Set(0)
+
+f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.dtFlexCovr.RowCount--,1)
+	f.Data.DataTable.SetValue("dtFlexCovr",v.Local.i,"SelectLine",False)
+f.Intrinsic.Control.Next(v.Local.i)
+Program.Sub.cmdDeSelectall_Click.End
+
+Program.Sub.cmdPrintPick_Click.Start
+v.Local.sparams.Declare
+v.Local.sVals.Declare
+v.Local.lBIID.Declare
+v.Local.sJob.Declare
+v.Local.sWC.Declare
+
+'Get report's ID #
+F.Global.BI.GetIDFromName("RS-ShippingDashPicklist-X_TST.rpt",V.Local.lBIID)
+'add params with appropriate values
+f.Intrinsic.String.Concat("OrderNo","",v.Local.sparams)
+F.Intrinsic.String.Split(v.Local.sparams,"",v.Local.sparams)
+f.Intrinsic.String.Concat(v.Screen.frmPrint!txtSONumb.text,"",V.Local.sVals)
+f.Intrinsic.String.Split(v.Local.sVals,"*!*",v.Local.svals)
+'Print Report
+f.global.BI.PrintReport(v.Local.lBIID,0,v.Local.sparams,v.Local.sVals,"",false)
+	
+Program.Sub.cmdPrintPick_Click.End
+
+
